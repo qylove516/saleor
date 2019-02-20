@@ -18,7 +18,8 @@ class PagePublishedQuerySet(PublishedQuerySet):
 class Page(SeoModel, PublishableModel):
     slug = models.SlugField(unique=True, max_length=100)
     title = models.CharField(max_length=200)
-    content = models.TextField()
+    content = models.TextField(blank=True)
+    content_json = models.TextField(blank=True)
     created = models.DateTimeField(auto_now_add=True)
 
     objects = PagePublishedQuerySet.as_manager()
@@ -45,7 +46,8 @@ class PageTranslation(SeoModelTranslation):
     page = models.ForeignKey(
         Page, related_name='translations', on_delete=models.CASCADE)
     title = models.CharField(max_length=255, blank=True)
-    content = models.TextField()
+    content = models.TextField(blank=True)
+    content_json = models.TextField(blank=True)
 
     class Meta:
         unique_together = (('language_code', 'page'),)
