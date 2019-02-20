@@ -26,6 +26,7 @@ All notable, unreleased changes to this project will be documented in this file.
 - Use exact image versions in docker-compose - #3742 by @ashishnitinpatil
 - Add mutation to connect voucher with checkout - #3739 by @Kwaidan00
 - Update S3 deployment documentation to include CORS configuration note - #3743 by @NyanKiyoshi
+- Add json fields to models for content/description - #3756 by @michaljelonek
 
 ## 2.3.0
 ### API
